@@ -1,3 +1,5 @@
+
+
 function score(a){
     if (a < 65){
         return "F";
