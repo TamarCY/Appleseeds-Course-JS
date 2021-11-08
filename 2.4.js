@@ -9,7 +9,10 @@ let ToDay=()=>{
     
     let answ="Today is " + day + " the " + monthDay + " of " + myMonth + ", " + year;
     return answ;
+    console.log(answ);
 }
 ToDay();
+
+
 
 
