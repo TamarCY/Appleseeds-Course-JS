@@ -53,6 +53,8 @@ function squareRoot2(a){
     return(Math.sqrt(a));
 }
 
+
+
 const randomNumbers = (a, b) => Math.random() * (a - b) + b;
 
 function randomNumbers2(a, b){
