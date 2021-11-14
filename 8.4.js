@@ -2,14 +2,18 @@ const array = ["Hello", "Good Day", "Your Welcome", "hotdog",
 "hamburgers"];
 
 const countTheLetters = (arr) => {
-    const str = arr.join(" ").toLowerCase();
+    const str = arr.join("").toLowerCase();
     console.log(str);
-    let obj = {a:0};
+    let obj = {};
     for (let char of str){
-                obj[char] = 0;
+                if (char != " "){
+                    obj[char] = 0;
+                }                
         }
     for (char of str){
+        if (char != " "){
         obj[char]++;
+        }
     }
     return obj;
 }
