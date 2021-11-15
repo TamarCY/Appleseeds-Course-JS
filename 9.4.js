@@ -6,4 +6,4 @@ const steps = (n) => {
     }
 }
 
-steps(2);
+steps(4);
