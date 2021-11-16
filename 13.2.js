@@ -1,5 +1,5 @@
 const foods = ["falafel", "sabich", "hummus", "pizza with extra",
-"pineapple"];
+    "pineapple"];
 
 let sorted = foods.slice().sort();
 
