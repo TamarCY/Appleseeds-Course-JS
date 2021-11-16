@@ -20,9 +20,10 @@ let sumOfEven = arr.reduce((sum, n) =>
     , 0)
 
 
+let avg = arr.reduce((res, n) => (res + n))/arr.length
 
 console.log(avg)
 
-let avg2 = arr.reduce((res, n) => (res + n)) / arr.length
+let avg2 = arr.reduce((res, n) => (res + n/arr.length),0)
 
 console.log(avg2)
