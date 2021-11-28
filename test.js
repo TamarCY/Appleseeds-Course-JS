@@ -1,17 +1,35 @@
-
-// function isString(string, (params) =>   {
-//     return typeof str === 'string'}) {
-//       return func(string);
-//   }
-
-
-const makeBetweenFunc = (n1, n2) => {
-    return function (age) {
-        return (age > n1 && age < n2);
+var b = 1;
+function someFunction(number) {
+    function otherFunction(input) {
+        return b;
     }
+    b = 5;
+    return otherFunction;
 }
-const isChild = makeBetweenFunc(0,18);
+var firstResult = someFunction(9);
+// var firstResult = 
+//                 function otherFunction(input) {
+//                     return b;
+//                 }
+
+var result = firstResult(2);
+
+console.log(result)
 
 
-console.log(isChild(20));
+var a = 1;
+function b2() {
+    a = 10;
+    return;
+    function a() { }
+}
+b2();
+console.log(a);
 
+// let i;
+for ( let i = 0; i < 3; i++) {
+ const log = () => {
+ console.log(i);
+ }
+ setTimeout(log, 100);
+}
