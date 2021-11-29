@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="plus">+</button>
+    <button class="minus">-</button>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas et cumque ullam molestias unde quia illo blanditiis, consequatur esse! Eligendi cupiditate quaerat excepturi quod? Impedit sed rerum dolor placeat dolore.
+        Exercitationem maiores sit rem voluptates tempora praesentium unde, dolor iste ratione? Itaque dolore omnis quaerat porro, odit natus voluptates praesentium dolor ut adipisci maiores quisquam? Quasi nisi tempora necessitatibus quidem!
+        Esse minima alias tenetur maxime quis perspiciatis nesciunt perferendis a, iure ipsa inventore hic ex nam, quos placeat. Recusandae aliquid nam accusantium libero alias ea debitis, soluta cupiditate reprehenderit magnam!
+        Ab ipsum labore placeat fuga vel soluta cumque minus, similique, ratione laborum pariatur et a earum dolorem nostrum odit? Consequuntur, eos odio sapiente aliquam non aliquid odit adipisci repudiandae fuga!
+        Deleniti adipisci nostrum, velit voluptate eos error tempora quam totam aperiam obcaecati quae, amet, deserunt blanditiis enim molestiae consequuntur eveniet impedit atque esse. Illo architecto non ratione libero obcaecati porro.
+        Perferendis laudantium, obcaecati laboriosam error totam ab doloribus aliquam delectus. Placeat ut laudantium consectetur provident earum dolorum, reiciendis beatae recusandae aliquid eveniet eligendi assumenda sint odio est ducimus et ex?
+        Incidunt natus quibusdam commodi repudiandae ratione dolorem repellendus, aperiam eveniet, voluptas minus numquam aut earum iusto voluptatum expedita tenetur! Earum distinctio ipsam deleniti pariatur voluptas! Saepe suscipit ipsa modi eveniet!
+        Fuga, et facere? Nam ullam esse cumque alias praesentium labore. Animi sequi molestiae minus fugiat, deleniti facilis quidem quae. Atque perspiciatis magnam ea, reiciendis dolores numquam repudiandae aliquam nesciunt fugiat.
+        Debitis voluptatum minus excepturi. Ad quas necessitatibus ab magnam. Laborum architecto, ad delectus repudiandae nihil numquam praesentium modi, expedita pariatur libero exercitationem commodi quos ratione possimus, illo voluptate molestiae alias?
+        Laborum maxime cum soluta aut est error sapiente quisquam totam debitis! Quaerat fugit accusamus quisquam voluptatibus voluptate aut quam, rerum quis eos repellendus perspiciatis alias labore eligendi ut ratione error?
+    </p>
+    <script>
+        const plusBtn = document.querySelector(".plus")
+        const minBtn = document.querySelector(".minus")
+        const textEl = document.querySelector("p")
+        const incFontSize = () => {
+            let pStyle = window.getComputedStyle(textEl);
+            let currSize = parseInt(pStyle.fontSize, 10);
+            currSize = currSize >= 100? currSize : ++currSize;
+            textEl.style.fontSize = `${currSize}px`
+        } 
+        const decFontSize = () => {let pStyle = window.getComputedStyle(textEl);
+            let currSize = parseInt(pStyle.fontSize, 10);
+            currSize = currSize <= 6? currSize : --currSize;
+            textEl.style.fontSize = `${currSize}px`
+        } 
+        // TODO: mix to one func with max size as an argument
+        plusBtn.addEventListener("click", incFontSize)
+        minBtn.addEventListener("click", decFontSize)
+    </script>
+</body>
+</html>
