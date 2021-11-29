@@ -16,7 +16,7 @@
         const textEl = document.querySelector("textarea");
         const countLength = () => {
             let inputText = textEl.value;
-            inputText.length < 10 ? massageElement.innerText = "You need to enter at least 100 characters!!!" : massageElement.innerText = ""      
+            inputText.length < 100 ? massageElement.innerText = "You need to enter at least 100 characters!!!" : massageElement.innerText = ""      
         }
         const btn = document.querySelector("button");
         btn.addEventListener("click", countLength)

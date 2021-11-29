@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light-bull{
+            height: 200px;
+            width: 100px;
+
+        }
+
+        .on{
+            background: url(./pic_bulbon.gif) no-repeat center center
+        }
+        .off{
+            background: url(./pic_bulboff.gif) no-repeat center center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="light-bull on"></div>
+    <script>
+        const lightEl = document.querySelector(".light-bull");
+        const toggleClass = () => {
+            lightEl.classList.toggle("off")
+            lightEl.classList.toggle("on")
+
+            console.log(lightEl.classList)
+        }
+        lightEl.addEventListener("click", toggleClass)
+    </script>
+</body>
+</html>
