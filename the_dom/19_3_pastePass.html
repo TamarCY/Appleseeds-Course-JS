@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" min="0" maxlength="1" pattern="[0-9]">
+        <input type="text" min="0" maxlength="1" pattern="[0-9]">
+        <input type="text" min="0" maxlength="1" pattern="[0-9]">
+        <input type="text" min="0" maxlength="1" pattern="[0-9]">
+
+        <h2>value to copy</h2>
+        <p>1234</p>
+<script>
+
+    const inputCells = Array.from(document.querySelectorAll("input"));
+    const inputPass = [];
+    
+    const func = (inputCells) => {
+
+    for (let index = 0; index < inputCells.length; index++){
+//    inputCells.forEach(element, index => { 
+       if (index === inputCells.length - 1) {
+           return 
+        }
+        console.log(index);
+       inputCells[index].addEventListener("input", inputCells[index+1].focus())
+   };
+}
+
+func (inputCells)
+
+    // const pass = "12"
+    // const x = Array.from(document.querySelectorAll("input"))
+    // const creatInputArr = (password) =>{
+    //     return  password.map(element => element.value)  
+    // }
+    // const chackPass = (input, str) => {
+    //     const arr = creatInputArr(input);
+    //     const pass = arr.join("")
+    //     let result =  pass == str? true: false; 
+    //     return result
+    // }
+    
+    // const pasteFunc = (el) => {
+    // el.addEventListener('paste', (event) => 
+    // {(event.clipboardData || window.clipboardData).getData('text')})
+    // return chackPass()
+    // }
+
+    // const btn = document.querySelector('button')
+    // btn.addEventListener("click", () => {chackPass(x, pass)})  
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
