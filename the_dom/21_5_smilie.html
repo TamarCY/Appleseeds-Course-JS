@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const header = document.createElement("h1");
+        header.innerText = "How many Noams do you want to see?";
+        const inputEl = document.createElement("input")
+        const btn = document.createElement("button")
+        document.body.appendChild(header)
+        document.body.appendChild(inputEl)
+        document.body.appendChild(btn)
+        btn.innerText = "Click!"
+        const box = document.createElement("div")
+        document.body.appendChild(box);
+        box.classList.add("box");
+        function addNoam(str){
+            if 
+        }
+        function chackInput () {
+            let input = inputEl.value;
+            let isnum = /^\d+$/.test(input);
+            !isnum? box.innerText = "Invalid Input!" : addNoam(input)
+        }
+        btn.addEventListener("click", chackInput)
+
+        
+
+
+
+    </script>
+</body>
+</html>
