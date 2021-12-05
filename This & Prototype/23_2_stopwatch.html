@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .watch {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="watch">
+        <span class="minuts"></span>
+        <span>:</span>
+        <span class="seconds"></span>
+        <span>:</span>
+        <span class="milliseconds"></span>
+    </div>
+    <div class="buttons">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+    </div>
+    <script>
+        const minutsElement = document.querySelector(".minuts")
+        const secondsElement = document.querySelector(".seconds")
+        const millisecondsElement = document.querySelector(".milliseconds")
+        const startButton = document.querySelector(".start")
+        const stopButton = document.querySelector(".stop")
+
+        let minuts = 0;
+        let seconds = 0;
+        let milliseconds = 0;
+        let intervelId;
+        let timerId;
+
+        const start = () => {
+             timerId = setInterval(() => {
+                milliseconds++
+                millisecondsElement.textContent = milliseconds;
+                if (milliseconds == 1000){
+                    milliseconds=0;
+                    millisecondsElement.textContent = milliseconds;
+                    seconds ++;
+                    secondsElement.textContent = seconds;
+                    console.log(seconds+"seconds")
+                }
+                if (seconds == 60){
+                    seconds = 0;
+                    secondsElement.textContent = seconds;
+                    minuts++
+                    minutsElement.textContent = minuts;
+                    console.log("minute")
+                }
+                if (minuts == 60){
+                    stop()
+                }
+            }, 1)
+        }
+        const stop = () => {
+            clearInterval(timerId);
+            console.log("stoped");
+        }
+
+        startButton.addEventListener("click", start);
+        stopButton.addEventListener("click", stop);
+
+
+        // const interval = () => {
+        //     intervalId = setInterval(addMilliseconds(),1)
+        // }
+
+        // const addMilliseconds = () => {
+        //     if (milliseconds = 1000) {
+        //         seconds++;
+        //         milliseconds = 0;
+        //     }
+        //     if (seconds = 60){
+        //         minuts++;
+        //         seconds = 0;
+        //     }
+        //     if (minuts = 60) {
+        //         minuts = 0;
+        //     }
+        //     milliseconds++;
+        //     console.log(`${minuts}::${seconds}::${milliseconds}`);
+        // }
+        // console.log(milliseconds);
+
+        // startButton.addEventListener("click",interval)
+        // stopButton.addEventListener("click", ()=>{clearInterval(intervalId)})
+
+    </script>
+</body>
+
+</html>
