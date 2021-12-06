@@ -10,9 +10,10 @@ const myObject = {
         console.log(this.name)
     },
     printNameTimeOut (){
-        // setTimeout(this.printName,2000)
 
         setTimeout(this.printName.bind(this),2000)
+                // setTimeout(this.printName,2000)
+
     }
 }
 
