@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <button>fetch</button>
+<script>
+
+const JOKEINDEX=0;
+// TODO: change to random number
+
+const getJoke = () => {
+        fetch('https://api.jokes.one/jod')
+        .then((res) => res.json())
+        .then((data)=> {
+            console.log(data);
+            const jokeTitle = data.contents.jokes[0].joke.title;
+            const jokeText = data.contents.jokes[0].joke.text;
+            console.log(jokeTitle);
+            console.log(jokeText);
+            outputElement.innerHTML = `<h2>${jokeTitle}</h2>
+    <p>${jokeText}</p>`
+        })
+    }
+
+    const outputElement = document.querySelector("div");
+    const button = document.querySelector("button");
+    // outputElement.innerHTML +=
+    button.addEventListener("click", getJoke)
+
+    
+
+    // output += `<h2>${title}</h2>
+    // <p>${joke}</p>`
+
+
+
+</script>
+</body>
+</html>
