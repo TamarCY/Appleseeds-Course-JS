@@ -14,7 +14,7 @@
     <script>
 
 
-        const getJoke = () => {
+        const getJoke1 = () => {
             fetch('https://api.jokes.one/jod')
                 .then((res) => res.json())
                 .then((data) => {
@@ -23,10 +23,26 @@
                     const jokeText = data.contents.jokes[0].joke.text;
                     console.log(jokeTitle);
                     console.log(jokeText);
-                    outputElement.innerHTML = `<h2>${jokeTitle}</h2>
-    <p>${jokeText}</p>`
+                    outputElement.innerHTML = `<h2>${jokeTitle}</h2> 
+                    <p>${jokeText}</p>`
                 })
         }
+
+
+        const getJoke = async () => {
+            const data = await fetch('https://api.jokes.one/jod');
+            const jokeObj =  await data.json();
+
+           
+
+            const jokeTitle = jokeObj.contents.jokes[0].joke.title;
+            const jokeText = jokeObj.contents.jokes[0].joke.text;
+            console.log(jokeTitle);
+            console.log(jokeText);
+            outputElement.innerHTML = `<h2>${jokeTitle}</h2> 
+                    <p>${jokeText}</p>`
+        }
+        
 
         const outputElement = document.querySelector("div");
         const button = document.querySelector("button");
