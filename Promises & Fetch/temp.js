@@ -1,6 +1,57 @@
-const myFirstFetch = fetch.then(()=>console.log("fatched"))
+const getIDs = () =>
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve([532, 543, 753, 1, 5]);
+
+        }, 1000);
+    });
 
 
+const getRecipe = (recipeID) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(
+            (ID) => {
+                const recipe = {
+                    title: "Fresh tomato pasta",
+                    publisher: "Pinchas Hodadad",
+                };
+                resolve(`${ID}: ${recipe.title}`);// also works with recipeID instad id in this line
+            },
+            1500,
+            recipeID // why cant we use as a parameter in the anonymus func insted of ID
+        );
+    });
+};
+
+// Calling the promise with .then ()
+
+getIDs()  //returns [532, 543, 753, 1, 5]
+    .then((IDs) => {  //gets [532, 543, 753, 1, 5]
+        console.log(IDs);  //log ...
+        return getRecipe(IDs[2]);  // gets 753 
+                                    // returns "753: fresh tomato pasta"
+    })
+    .then((recipe) => {   //gets "753: fresh tomato pasta"
+        console.log(recipe);  //log "753: f...
+    })
+    .catch((error) => {
+        console.log("It is an error!");
+    });
+
+// Calling the promise with async + await
+
+const getAsyncId = async () => {
+    try {
+        const response = await getIDs();
+        const data = await getRecipe(response[1]);
+        console.log(data)
+    }
+    catch (e) {
+        console.log("It is an error!");
+    }
+}
+
+getAsyncId()
 
 
 // 27.2
